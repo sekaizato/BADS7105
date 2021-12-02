@@ -29,7 +29,7 @@ Made comes packed with lots of options to let you customize the theme.
 
 The main things you might need to change here are:
 
-`site: Made Jekyll Theme` – change this to your website's name
+`site: BADS CRM` – change this to your website's name
 
 `url:` – the full URL that your site will be hosted at, e.g. https://your-domain.com
 
