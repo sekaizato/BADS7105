@@ -16,7 +16,7 @@ menu_settings:
 footer_settings:
   logo_image: 
   logo_width: 100
-  tagline: Business Analytics and Data Science
+  tagline: Customer Relationship Management
 
 hero_settings:
   background_image: # /images/backgrounds/background-hero.svg
