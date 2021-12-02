@@ -15,7 +15,7 @@ menu_settings:
 
 footer_settings:
   logo_image: /images/zatori_color.png
-  logo_width: 100
+  logo_width: 30
   tagline: Customer Relationship Management
 
 hero_settings:
