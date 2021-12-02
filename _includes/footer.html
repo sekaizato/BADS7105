@@ -3,7 +3,7 @@
 
 		{% if site.data.settings.footer_settings.logo_image %}
 		<a href="{{ site.baseurl }}/" class="footer__logo">
-			<img src="{{ site.data.settings.footer_settings.logo_image | relative_url }}" class="footer__logo__img">
+			<img src="{{ site.data.settings.footer_settings.logo_image | relative_url }}" class="footer__logo__img" style="max-width: 50px">
 		</a>
 		{% else %}
 		<a href="{{ site.baseurl }}/" class="footer__title">
