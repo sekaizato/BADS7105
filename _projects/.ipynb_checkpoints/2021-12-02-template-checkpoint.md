@@ -6,8 +6,6 @@ featured_image: demo.jpg
 accent_color: '#4C60E6'
 gallery_images:
   - demo.jpg
-  - demo.jpg
-  - demo.jpg
 ---
 {% comment %}
     {% raw %}
