@@ -14,8 +14,8 @@ menu_settings:
     #   url: '/blog/'
 
 footer_settings:
-  logo_image: /images/zatori_color.png
-  logo_width: 30
+  logo_image: 
+  logo_width: 0
   tagline: Customer Relationship Management
 
 hero_settings:
