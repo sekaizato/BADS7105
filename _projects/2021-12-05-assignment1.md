@@ -7,7 +7,6 @@ featured_image: 2021-12-05-assignment1-assignment1-dashboard.jpg
 accent_color: '#4C60E6'
 gallery_images:
   - 2021-12-05-assignment1-assignment1-dashboard.jpg
-  - 2021-12-05-assignment1-assignment1-customer.jpg
 ---
 {% comment %}
     {% raw %}
@@ -124,6 +123,15 @@ def saveExport():
 saveExport()
 # runBrowser(url)
 ```
+
+    1 posts 
+    2 projects
+     2
+
+
+    [NbConvertApp] Converting notebook assignment1.ipynb to markdown
+    [NbConvertApp] Writing 6615 bytes to assignment1.md
+
     {% endraw %}
 {% endcomment %}
 ##  Objective
