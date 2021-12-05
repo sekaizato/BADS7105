@@ -3,7 +3,7 @@ title: Assignment 1 Customer Insights with Multidimensional Analysis
 subtitle: Multi Dimensional Dashboard for Supermarket
 date: 2021-12-04 00:00:00
 description: Project for analyze customer relationship management on supermarket by User Empathy Map.
-featured_image: demo.jpg
+featured_image: projects/2021-12-05-assignment1-assignment1-dashboard.jpg
 accent_color: '#4C60E6'
 gallery_images:
   - demo.jpg
@@ -130,7 +130,7 @@ saveExport()
 
 
     [NbConvertApp] Converting notebook assignment1.ipynb to markdown
-    [NbConvertApp] Writing 6316 bytes to assignment1.md
+    [NbConvertApp] Writing 6497 bytes to assignment1.md
 
     {% endraw %}
 {% endcomment %}
@@ -202,3 +202,20 @@ saveExport()
 - Member vs Non-member
 - Customer Life Stage
 - Product Category (Different Product)
+
+## Dashboard
+
+สร้าง Dashboard เพื่อตอบโจทย์ User
+
+
+```python
+displayImg("assignment1-dashboard.jpg")
+```
+
+
+
+
+![](/images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
+
+![](/images/demo.jpg)
+
