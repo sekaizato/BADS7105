@@ -130,7 +130,7 @@ saveExport()
 
 
     [NbConvertApp] Converting notebook assignment1.ipynb to markdown
-    [NbConvertApp] Writing 6316 bytes to assignment1.md
+    [NbConvertApp] Writing 6314 bytes to assignment1.md
 
     {% endraw %}
 {% endcomment %}
@@ -202,3 +202,5 @@ saveExport()
 - Member vs Non-member
 - Customer Life Stage
 - Product Category (Different Product)
+
+
