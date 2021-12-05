@@ -130,7 +130,7 @@ saveExport()
 
 
     [NbConvertApp] Converting notebook assignment1.ipynb to markdown
-    [NbConvertApp] Writing 6314 bytes to assignment1.md
+    [NbConvertApp] Writing 6461 bytes to assignment1.md
 
     {% endraw %}
 {% endcomment %}
@@ -202,5 +202,17 @@ saveExport()
 - Member vs Non-member
 - Customer Life Stage
 - Product Category (Different Product)
+
+## Dashboard
+
+
+```python
+displayImg("assignment1-dashboard.png")
+```
+
+
+
+
+![](/images/projects/2021-12-05-assignment1-assignment1-dashboard.png)
 
 
