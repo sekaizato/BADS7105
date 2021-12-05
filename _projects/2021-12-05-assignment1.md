@@ -130,7 +130,7 @@ saveExport()
 
 
     [NbConvertApp] Converting notebook assignment1.ipynb to markdown
-    [NbConvertApp] Writing 6497 bytes to assignment1.md
+    [NbConvertApp] Writing 6498 bytes to assignment1.md
 
     {% endraw %}
 {% endcomment %}
@@ -215,6 +215,6 @@ displayImg("assignment1-dashboard.jpg")
 
 
 
-![](/images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
+![](/BADS7105/images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
 
 
