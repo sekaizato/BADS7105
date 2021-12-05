@@ -3,7 +3,7 @@ title: Assignment 1 Customer Insights with Multidimensional Analysis
 subtitle: Multi Dimensional Dashboard for Supermarket
 date: 2021-12-04 00:00:00
 description: Project for analyze customer relationship management on supermarket by User Empathy Map.
-featured_image: 2021-12-05-assignment1-assignment1-dashboard.jpg
+featured_image: demo.jpg
 accent_color: '#4C60E6'
 gallery_images:
   - demo.jpg
@@ -80,7 +80,7 @@ def displayImg(img_name):
     if PATH != '':     
         img_path = PATH + '/images/projects'
         !mv $master_name $img_path
-        output = md("![](/images/projects/" + master_name +")")        
+        output = md("![](/BADS7105/images/projects/" + master_name +")")
     else:
         img_path = PATH
         output = md("![]("+master_name +")")
@@ -205,18 +205,16 @@ saveExport()
 
 ## Dashboard
 
-สร้าง Dashboard เพื่อตอบโจทย์ User (Update5-multiple)
+สร้าง Dashboard เพื่อตอบโจทย์ User
 
 
 ```python
 displayImg("assignment1-dashboard.jpg")
 ```
 
-![](/BADS7105/images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
-![](images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
-![](/2021-12-05-assignment1-assignment1-dashboard.jpg)
-![](2021-12-05-assignment1-assignment1-dashboard.jpg)
 
 
-![](/images/demo.jpg)
+
+![](/images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
+
 
