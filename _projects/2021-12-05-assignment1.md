@@ -6,7 +6,8 @@ description: Project for analyze customer relationship management on supermarket
 featured_image: 2021-12-05-assignment1-assignment1-dashboard.jpg
 accent_color: '#4C60E6'
 gallery_images:
-  - demo.jpg
+  - 2021-12-05-assignment1-assignment1-dashboard.jpg
+  - 2021-12-05-assignment1-assignment1-customer.jpg
 ---
 {% comment %}
     {% raw %}
@@ -123,15 +124,6 @@ def saveExport():
 saveExport()
 # runBrowser(url)
 ```
-
-    1 posts 
-    2 projects
-     2
-
-
-    [NbConvertApp] Converting notebook assignment1.ipynb to markdown
-    [NbConvertApp] Writing 6546 bytes to assignment1.md
-
     {% endraw %}
 {% endcomment %}
 ##  Objective
@@ -141,6 +133,18 @@ saveExport()
 โดยเราจะใช้ข้อมูลจาก บริษัท Dunnhumby ซึ่งเป็น บริษัทที่ทำ analytics ให้กับ Tesco ทำด้านเกี่ยวกับ Customer Data Science (Dr.Thanachart Ritbumroong)
 
 ## Problem-Reason-Action
+
+
+```python
+displayImg("assignment1-customer.jpg")
+```
+
+
+
+
+![](/BADS7105/images/projects/2021-12-05-assignment1-assignment1-customer.jpg)
+
+
 
 ### Problem
 
