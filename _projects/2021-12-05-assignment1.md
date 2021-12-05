@@ -205,14 +205,16 @@ saveExport()
 
 ## Dashboard
 
-สร้าง Dashboard เพื่อตอบโจทย์ User
+สร้าง Dashboard เพื่อตอบโจทย์ User (Update4-multiple)
 
 
 ```python
 displayImg("assignment1-dashboard.jpg")
 ```
 
-
+![](/images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
+![](images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
+![](/2021-12-05-assignment1-assignment1-dashboard.jpg)
 ![](2021-12-05-assignment1-assignment1-dashboard.jpg)
 
 
