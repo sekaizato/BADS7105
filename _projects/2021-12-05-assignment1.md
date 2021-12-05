@@ -1,5 +1,5 @@
 ---
-title: Assignment 1 : Customer Insights with Multidimensional Analysis
+title: Assignment 1 Customer Insights with Multidimensional Analysis
 subtitle: Multi Dimensional Dashboard for Supermarket
 date: 2021-12-04 00:00:00
 description: Project for analyze customer relationship management on supermarket by User Empathy Map.
@@ -124,35 +124,13 @@ saveExport()
 # runBrowser(url)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    FileNotFoundError                         Traceback (most recent call last)
-
-    <ipython-input-5-dbd403efa259> in <module>
-         99     get_ipython().system('mv $master_name $post_path')
-        100 
-    --> 101 saveExport()
-        102 # runBrowser(url)
+    1 posts 
+    2 projects
+     2
 
 
-    <ipython-input-5-dbd403efa259> in saveExport()
-         83 
-         84 def saveExport():
-    ---> 85     pynb_name = ipynbname.name() +'.ipynb'
-         86     md_name = ipynbname.name() +'.md'
-         87     if PATH != '':
-
-
-    /opt/anaconda3/envs/sekai/lib/python3.8/site-packages/ipynbname/__init__.py in name()
-         80     if path:
-         81         return path.stem
-    ---> 82     raise FileNotFoundError(FILE_ERROR.format('name'))
-         83 
-         84 
-
-
-    FileNotFoundError: Can't identify the notebook name.
+    [NbConvertApp] Converting notebook assignment1.ipynb to markdown
+    [NbConvertApp] Writing 6316 bytes to assignment1.md
 
     {% endraw %}
 {% endcomment %}
