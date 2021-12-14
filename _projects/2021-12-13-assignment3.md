@@ -120,9 +120,20 @@ def saveExport():
     !mv $md_name $master_name
     !mv $master_name $post_path
 
-# saveExport()
+saveExport()
 # runBrowser(url)
 ```
+
+    1 posts 
+    2 projects
+     2
+
+
+    [NbConvertApp] Converting notebook assignment1.ipynb to markdown
+    [NbConvertApp] Support files will be in assignment1_files/
+    [NbConvertApp] Making directory assignment1_files
+    [NbConvertApp] Writing 15835 bytes to assignment1.md
+
     {% endraw %}
 {% endcomment %}
 ##  Objective
@@ -605,15 +616,11 @@ rules.sort_values("support", ascending=False).reset_index(drop=True).head(5)
 
 
 
-
-```python
 ## สรุป
-
 สินค้าที่ควรแนะนำให้ลูกค้าคือ
 1. ยาดม และ Bluetooth Speakere
 2. ยาดม และ Salmon Sashimi
-3. ยาแด
-```
+3. ยาดม และ แก้วเก็บความเย็น
 
 
 ```python
@@ -631,4 +638,16 @@ plt.show()
 
 
 ![png](assignment1_files/assignment1_15_0.png)
+
+
+
+```python
+displayImg("assignment2-marketbasket.jpg")
+```
+
+
+
+
+![](/BADS7105/images/projects/2021-12-13-assignment3-assignment2-marketbasket.jpg)
+
 
