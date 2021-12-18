@@ -1,10 +1,134 @@
+---
+title: Assignment 6 Voice of Customer
+subtitle: Up selling Analysis and Cstomer Response Model
+date: 2021-12-04 00:00:00
+description: Project for study relationship between transaction of supermarket data.
+featured_image: 2021-12-05-assignment2-assignment2-marketbasket.jpg
+accent_color: '#4C60E6'
+gallery_images:
+  - 2021-12-05-assignment1-assignment1-dashboard.jpg
+---
+{% comment %}
+    {% raw %}
+
 ```python
-print('hello')
+PROJECT_LINK = 'assignment6'
+PATH = '/Users/touchpadthamkul/zatoDev/project/bads_crm_final/master/BADS7105'
+
+
+# FRAMEWORK
+from IPython.display import Markdown as md
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+import plotly.express as px
+import plotly.io as pio
+import datetime, pytz
+import numpy as np
+import os
+
+pio.renderers.default = 'colab'
+
+def getVariableNames(variable):
+    results = []
+    globalVariables=globals().copy()
+    for globalVariable in globalVariables:
+        if id(variable) == id(globalVariables[globalVariable]):
+            results.append(globalVariable)
+    return results
+
+def displayPlot(fig):
+    project_id = PROJECT_LINK.replace(' ','_')
+    fig_json = fig.to_json()
+    fig_name = str(datetime.datetime.now(tz=pytz.timezone('Asia/Bangkok')).date())+'-'+project_id+'_'+getVariableNames(fig)[0]
+    filename = fig_name+'.html'
+    if PATH != '':
+        save_path = PATH + '/_includes/post-figures/'
+    else:
+        save_path = ''
+    completeName = os.path.join(save_path, filename)
+    template = """
+<html>
+    <head>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+        <div id='{1}'></div>
+        <script>
+            var plotly_data = {0};
+            let config = {{displayModeBar: false }};
+            Plotly.react('{1}', plotly_data.data, plotly_data.layout, config);
+        </script>
+    </body>
+</html>
+"""
+    # write the JSON to the HTML template
+    with open(completeName, 'w') as f:
+        f.write(template.format(fig_json, fig_name))
+    return md("{% include post-figures/" + filename + " full_width=true %}")
+
+def displayImg(img_name):
+    master_name = str(datetime.datetime.now(tz=pytz.timezone('Asia/Bangkok')).date()) + '-' + PROJECT_LINK + '-' + img_name
+    !cp -frp $img_name $master_name
+    if PATH != '':     
+        img_path = PATH + '/images/projects'
+        !mv $master_name $img_path
+        output = md("![](/BADS7105/images/projects/" + master_name +")")
+    else:
+        img_path = PATH
+        output = md("![]("+master_name +")")
+    return output
+
+
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
+def runBrowser(url):
+    url = 'https://zato.dev/blog/' + PROJECT_LINK
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("window-size=375,812")
+    # browser = webdriver.Chrome('/Users/touchpadthamkul/PySelenium/chromedriver', chrome_options=chrome_options)
+    browser = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_options)
+    browser.get(url)
+
+    
+import ipynbname
+
+def saveExport():        
+    pynb_name = ipynbname.name() +'.ipynb'
+    md_name = ipynbname.name() +'.md'
+    if PATH != '':
+        selected = int(input('1 posts \n2 projects\n'))
+        if selected != 1:
+            folder = '/_projects'
+        else:
+            folder = '/_posts'
+        post_path = PATH + folder
+    else:
+        post_path = ''
+    master_name = str(datetime.datetime.now(tz=pytz.timezone('Asia/Bangkok')).date()) + '-' + PROJECT_LINK + '.md'
+    !jupyter nbconvert --to markdown $pynb_name
+    !mv $md_name $master_name
+    !mv $master_name $post_path
+
+saveExport()
+# runBrowser(url)
 ```
 
-    hello
+    1 posts 
+    2 projects
+     2
 
 
+    [NbConvertApp] Converting notebook assignment6-main.ipynb to markdown
+    [NbConvertApp] Support files will be in assignment6-main_files/
+    [NbConvertApp] Making directory assignment6-main_files
+    [NbConvertApp] Writing 15323 bytes to assignment6-main.md
+
+    {% endraw %}
+{% endcomment %}
 
 ```python
 import numpy as np
@@ -110,14 +234,13 @@ df.info()
 
     <class 'pandas.core.frame.DataFrame'>
     RangeIndex: 300 entries, 0 to 299
-    Data columns (total 3 columns):
+    Data columns (total 2 columns):
      #   Column     Non-Null Count  Dtype 
     ---  ------     --------------  ----- 
      0   Review ID  300 non-null    int64 
      1   Review     300 non-null    object
-     2   KMeans ID  300 non-null    int32 
-    dtypes: int32(1), int64(1), object(1)
-    memory usage: 6.0+ KB
+    dtypes: int64(1), object(1)
+    memory usage: 4.8+ KB
 
 
 ### Step1 - document embedding and dimension reduction
@@ -182,7 +305,7 @@ plt.ylabel('WCSS')
 
 
 
-![png](assignment6-main_files/assignment6-main_10_1.png)
+![png](assignment6-main_files/assignment6-main_12_1.png)
 
 
 
@@ -239,7 +362,7 @@ df_kmeans
     <tr>
       <th>0</th>
       <td>0</td>
-      <td>0      เป็นคนที่ชอบทาน Macchiato เป็นประจำ มีว...</td>
+      <td>13     เคยเป็นไหมกันไหมคะ หลังอาหารมื้อใหญ่ ต่...</td>
     </tr>
     <tr>
       <th>1</th>
@@ -249,7 +372,7 @@ df_kmeans
     <tr>
       <th>2</th>
       <td>2</td>
-      <td>13     เคยเป็นไหมกันไหมคะ หลังอาหารมื้อใหญ่ ต่...</td>
+      <td>0      เป็นคนที่ชอบทาน Macchiato เป็นประจำ มีว...</td>
     </tr>
   </tbody>
 </table>
@@ -367,9 +490,9 @@ df_kmeans
     <tr>
       <th>0</th>
       <td>0</td>
-      <td>เป็นคนที่ชอบทานMacchiatoเป็นประจำมีวันนึงเดArt...</td>
-      <td>[คน, ชอบ, Macchiato, เป็นประจำ, นึง, เด, Artof...</td>
-      <td>[(ร้านกาแฟ, 25), (กาแฟ, 23), (ชอบ, 11), (คาเฟ่...</td>
+      <td>เคยเป็นไหมกันไหมคะหลังอาหารมื้อใหญ่ต่อให้อิ่เช...</td>
+      <td>[ไหม, ไหม, หลังอาหาร, มื้อ, ต่อให้, อิ่, เช้า,...</td>
+      <td>[(ชา, 18), (นม, 14), (ไข่มุก, 14), (เครื่องดื่...</td>
     </tr>
     <tr>
       <th>1</th>
@@ -381,9 +504,9 @@ df_kmeans
     <tr>
       <th>2</th>
       <td>2</td>
-      <td>เคยเป็นไหมกันไหมคะหลังอาหารมื้อใหญ่ต่อให้อิ่ร้...</td>
-      <td>[ไหม, ไหม, หลังอาหาร, มื้อ, ต่อให้, อิ่, ร้านก...</td>
-      <td>[(ชา, 18), (นม, 14), (ไข่มุก, 14), (เครื่องดื่...</td>
+      <td>เป็นคนที่ชอบทานMacchiatoเป็นประจำมีวันนึงเดArt...</td>
+      <td>[คน, ชอบ, Macchiato, เป็นประจำ, นึง, เด, Artof...</td>
+      <td>[(ร้านกาแฟ, 26), (กาแฟ, 23), (ชอบ, 11), (คาเฟ่...</td>
     </tr>
   </tbody>
 </table>
@@ -406,7 +529,7 @@ for i in range(0, len(df_kmeans)):
 
     Cluster ID : 0
     
-    Most common words include : [('ร้านกาแฟ', 25), ('กาแฟ', 23), ('ชอบ', 11), ('คาเฟ่', 6), ('น', 6), ('แวะ', 6), ('ดี', 6), ('รี่', 5), ('อร่อย', 5), ('น่ารัก', 5)]
+    Most common words include : [('ชา', 18), ('นม', 14), ('ไข่มุก', 14), ('เครื่องดื่ม', 4), ('ร้า', 3), ('น้ำ', 3), ('ตั้งอยู่', 3), ('ลอง', 3), ('เดิน', 3), ('ปั่น', 3)]
     
     Cluster ID : 1
     
@@ -414,7 +537,7 @@ for i in range(0, len(df_kmeans)):
     
     Cluster ID : 2
     
-    Most common words include : [('ชา', 18), ('นม', 14), ('ไข่มุก', 14), ('เครื่องดื่ม', 4), ('รีวิว', 4), ('ร้า', 3), ('น้ำ', 3), ('ตั้งอยู่', 3), ('ลอง', 3), ('เดิน', 3)]
+    Most common words include : [('ร้านกาแฟ', 26), ('กาแฟ', 23), ('ชอบ', 11), ('คาเฟ่', 6), ('น', 6), ('รีวิว', 6), ('แวะ', 6), ('ดี', 6), ('รี่', 5), ('อร่อย', 5)]
     
 
 
@@ -441,18 +564,56 @@ df[df["KMeans ID"] == 0].Review
 
 
 
-    0      เป็นคนที่ชอบทาน Macchiato เป็นประจำ มีวันนึงเด...
-    1      Art of Coffee Kasetsart เป็นร้านกาแฟรสชาติเยี่...
-    5      เป็นร้านที่สะดุดตาที่สุดบนถนนจรัญ เลยก็ว่าได้ ...
-    7      Starbucks \nเกี่ยวกับร้าน: \nร้าน Starbucks นี...
-    8      \nร้านเบอเกอรี่ร้านนี้อยู่ในร้านล้างรถชื่อว่า ...
-                                 ...                        
-    292    ร้านกาแฟน่ารักๆ ในปั๊มนํ้ามันปิโตรนาสบนเส้นทาง...
-    296    ร้านสะอาดดี ตกแต่งสวยงาม มีที่จอดรถ ราคาเมนูต่...
-    297    เช้าๆ รีบๆ วิ่งมาเข่าห้องเรียนแทบไม่ทันแต่ต้อง...
-    298    ร้านนี้เป็นร้านกาแฟเล็กๆ ข้างๆ ร้านๆ Happy Man...
-    299    ทรูคอฟฟี่สาขาซีคอนอยู่ในศูนย์บริการของทรู ชั้น...
-    Name: Review, Length: 130, dtype: object
+    13     เคยเป็นไหมกันไหมคะ หลังอาหารมื้อใหญ่ ต่อให้อิ่...
+    20     เช้าๆบ่ายๆหรือเย็นๆ อาหารว่างที่คนเรามักหยิบจั...
+    23     ระหว่างมุ่งหน้าสู่ชัยภูมิ เราแวะเติมพลังกันที่...
+    29     เป็นร้านเครื่องดื่มขนาดกระทัดรัด พื้นที่น้อย เ...
+    30     ร้านขายเครื่องดื่มผลิตภัณฑ์ชาเขียว ไอศรีมชาเขี...
+    31     ชานมไข่มุก จริงๆคืออ้วนมาก\nไม่ค่อยอยากกินเลย\...
+    34     เดินผ่านร้านนี้มาหลายครั้งแล้วค่ะ สังเกตว่าร้า...
+    42     ร้านอยู่โซนซุ้มขายของเล็กๆตรงกลางนะคะ ใกล้ๆกับ...
+    44     บนห้าง Big-C ราชดำริ นิวคุงได้ไปเจอร้านขายน้ำท...
+    47     ...น่าจะใช่นะ Ochaya มีสาขาเยอะมากๆทั้งตึกออฟฟ...
+    58     ร้าน April store เป็นร้านกาแฟขนาดเล็ก ตั้งอยู่...
+    61     วันนี้มาเดินเที่ยวสยามคะ ถ้าชาไข่มุกอร่อยๆต้อง...
+    66     ร้าน April store อยู่บริเวณสวนของ ยู เซ็นเตอร์...
+    74     วันก่อนนิวคุงไปเดินเล่นหาอะไรกินในย่านหอการค้า...
+    84     วันนี้ได้ฤกษ์มารีวิวร้านชานมไข่มุก ร้านที่โปรด...
+    87     เป็นคนชอบทานชาไข่มุก ลองมาแล้วหลายร้าน ติดใจรส...
+    90     ร้าน A Little Sweet เป็นร้านของหวานสไตล์ desse...
+    93     \n\n\n\n\nร้าน Dakasi เป็นร้านเครื่องดื่มครับ ...
+    97     ร้านวโรชา เป็นร้านก๋วยเตี๋ยวเล็กๆ ที่เปิดมานาน...
+    106    ร้านชานมไข่มุกร้านนี้ที่เราจะมาแนะนำมีชื่อร้าย...
+    107    จากโปรโมชั่นของ openrice ทำให้ได้ลองชิมชายี่ห้...
+    121    มาเดินโฮมโปร กับหลาน คุณหลานเกิดอยากดื่มชานมหว...
+    122    Tea Story ร้านชานมไข่มุกกิ๊บเก๋ตั้งอยู่กลางห้า...
+    131    เป็นร้านที่ตั้งอยุตรงถนนนิมมานเลย เห็นแต่ไกล ร...
+    133    เล่าตอนที่ไปถึงร้าน\nร้าน นมโจ 100% เป็นร้านขา...
+    134    ของหวานฝรั่งเศสสไตล์ญี่ปุ่น เป็นอาหารที่ถูกจับ...
+    137    อยากจะบอกไปตามตรงเลยว่า ร้านนี้แหล่ะร้านชานมไข...
+    146    ข้อมูลที่ลงรีวิวเป็นความเห็นส่วนตัวที่ได้พบเจอ...
+    148    ร้านไอศครีมน่ารักๆ เหมาะกับพาครอบครัวมานั่งทาน...
+    152    เป็นร้านที่แวะเติมความหวานบ่อยมาก\n>>Location\...
+    166    ร้านนี้เป็นแหล่งรวมเครื่องดื่มนานาชนิดทั้งนม ช...
+    173    จะว่าไปผมก็ไม่ได้ทานชาไข่มุกมานานเหมือนกันครับ...
+    175    ลักษณะร้าน : เป็นร้านนม ที่ขายในช่วงเวลาเย็นๆถ...
+    176    เมื่อวานไปเดิน Terminal 21 ค่ะ อยากลองอะไรใหม่...
+    189    ร้าน ไออุ่น ชาไข่มุก มีนํ้าปั่นหลากหลายรสชาติ ...
+    190    Wawa Cha ร้านชานมไข่มุกจากไต้หวันภายใต้การบริห...
+    192    [สถานที่ตั้ง]\nThe Mall Bangkapi Fl.4 (ตรงข้าม...
+    200    ร้านอยู่ Big C สุขาภิบาล 5 ติดร้าน Oriental\nP...
+    211    ร้านนี้เป็นร้านขายขนมปังปิ้งแล้วก็น้ำปั่นอยู่ห...
+    219    ประโยชน์ของน้ำแตงโมปั่น\nแตงโม มีมากมายหลายพัน...
+    234    ทานชาเขียวกีวี่+ไข่มุกเป็นประจำค่ะ \nทานกี่สาข...
+    236    ร้านนี้เป็นร้านเล็กๆที่ตั้งอยู่เเถวสยาม ตรงข้า...
+    238    นึกถึงชานมไข่มุกต้นตำหรับไต้หวันแท้ๆ ต้องนึกถึ...
+    242    Dakasi ร้านชานมไข่มุกสูตรไต้หวันที่ตอนนี้มีสาข...
+    250    นานๆ ทีจะได้มาทำธุระที่เซ็นทรัลปิ่นเกล้า เดินๆ...
+    258    Fuku matcha อยู่ชั้นเดียวกับโรงหนัง sf เดอะมอล...
+    271    หลายคนคงเคยได้ยินข่าวว่าทานชานมไข่มุกมากๆไม่ดี...
+    287    มา Ochaya สั่งแบบเมนู basic เลย ชานมไข่มุก ราค...
+    294    ร้านบ้านไร่กาแฟเป็นร้านติด BTS เอกมัย ร้านใหญ่...
+    Name: Review, dtype: object
 
 
 
