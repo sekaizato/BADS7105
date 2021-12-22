@@ -1,12 +1,9 @@
 ---
 title: Assignment 2 Customer Segmentation
 subtitle: Clustering Algorithm by K-mean Clustering
-date: 2021-12-04 00:00:00
+date: 2021-12-12 00:00:00
 description: Project for study relationship between transaction of supermarket data.
-featured_image: 2021-12-05-assignment2-assignment2-marketbasket.jpg
 accent_color: '#4C60E6'
-gallery_images:
-  - 2021-12-05-assignment1-assignment1-dashboard.jpg
 ---
 {% comment %}
     {% raw %}
