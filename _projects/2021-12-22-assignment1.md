@@ -1,12 +1,12 @@
 ---
 title: Assignment 1 Customer Insights with Multidimensional Analysis
 subtitle: Multi Dimensional Dashboard for Supermarket
-date: 2021-12-04 00:00:00
+date: 2021-12-14 00:00:00
 description: Project for analyze customer relationship management on supermarket by User Empathy Map.
 featured_image: 2021-12-05-assignment1-assignment1-dashboard.jpg
 accent_color: '#4C60E6'
 gallery_images:
-  - demo.jpg
+  - 2021-12-05-assignment1-assignment1-dashboard.jpg
 ---
 {% comment %}
     {% raw %}
@@ -80,7 +80,7 @@ def displayImg(img_name):
     if PATH != '':     
         img_path = PATH + '/images/projects'
         !mv $master_name $img_path
-        output = md("![](/images/projects/" + master_name +")")        
+        output = md("![](/BADS7105/images/projects/" + master_name +")")
     else:
         img_path = PATH
         output = md("![]("+master_name +")")
@@ -130,7 +130,7 @@ saveExport()
 
 
     [NbConvertApp] Converting notebook assignment1.ipynb to markdown
-    [NbConvertApp] Writing 6497 bytes to assignment1.md
+    [NbConvertApp] Writing 6615 bytes to assignment1.md
 
     {% endraw %}
 {% endcomment %}
@@ -141,6 +141,18 @@ saveExport()
 โดยเราจะใช้ข้อมูลจาก บริษัท Dunnhumby ซึ่งเป็น บริษัทที่ทำ analytics ให้กับ Tesco ทำด้านเกี่ยวกับ Customer Data Science (Dr.Thanachart Ritbumroong)
 
 ## Problem-Reason-Action
+
+
+```python
+displayImg("assignment1-customer.jpg")
+```
+
+
+
+
+![](/BADS7105/images/projects/2021-12-05-assignment1-assignment1-customer.jpg)
+
+
 
 ### Problem
 
@@ -205,6 +217,16 @@ saveExport()
 
 ## Dashboard
 
+สร้าง Dashboard เพื่อตอบโจทย์ User
+
+
+```python
+displayImg("assignment1-dashboard.jpg")
+```
+
+
+
 
 ![](/BADS7105/images/projects/2021-12-05-assignment1-assignment1-dashboard.jpg)
+
 

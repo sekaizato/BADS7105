@@ -1,7 +1,7 @@
 ---
 title: Assignment 1 Customer Insights with Multidimensional Analysis
 subtitle: Multi Dimensional Dashboard for Supermarket
-date: 2021-12-04 00:00:00
+date: 2021-12-14 00:00:00
 description: Project for analyze customer relationship management on supermarket by User Empathy Map.
 featured_image: 2021-12-05-assignment1-assignment1-dashboard.jpg
 accent_color: '#4C60E6'
