@@ -5,8 +5,7 @@ date: 2021-12-05 00:00:00
 description: Project for study relationship between transaction of supermarket data.
 featured_image: 2021-12-05-assignment2-assignment2-marketbasket.jpg
 accent_color: '#4C60E6'
-gallery_images:
-  - 2021-12-05-assignment1-assignment1-dashboard.jpg
+
 ---
 {% comment %}
     {% raw %}
@@ -125,7 +124,7 @@ saveExport()
     [NbConvertApp] Converting notebook assignment7-main.ipynb to markdown
     [NbConvertApp] Support files will be in assignment7-main_files/
     [NbConvertApp] Making directory assignment7-main_files
-    [NbConvertApp] Writing 21388 bytes to assignment7-main.md
+    [NbConvertApp] Writing 21688 bytes to assignment7-main.md
 
     {% endraw %}
 {% endcomment %}
