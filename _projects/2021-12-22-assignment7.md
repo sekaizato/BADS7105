@@ -1,7 +1,7 @@
 ---
 title: Assignment 7 Voice of Customer
 subtitle: Up selling Analysis and Cstomer Response Model
-date: 2021-12-04 00:00:00
+date: 2021-12-05 00:00:00
 description: Project for study relationship between transaction of supermarket data.
 featured_image: 2021-12-05-assignment2-assignment2-marketbasket.jpg
 accent_color: '#4C60E6'
@@ -113,9 +113,20 @@ def saveExport():
     !mv $md_name $master_name
     !mv $master_name $post_path
 
-# saveExport()
+saveExport()
 # runBrowser(url)
 ```
+
+    1 posts 
+    2 projects
+     2
+
+
+    [NbConvertApp] Converting notebook assignment7-main.ipynb to markdown
+    [NbConvertApp] Support files will be in assignment7-main_files/
+    [NbConvertApp] Making directory assignment7-main_files
+    [NbConvertApp] Writing 21388 bytes to assignment7-main.md
+
     {% endraw %}
 {% endcomment %}
 
