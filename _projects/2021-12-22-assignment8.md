@@ -3,10 +3,8 @@ title: Assignment 8 Design Thinking
 subtitle: Research Tools for Product Development
 date: 2021-12-04 00:00:00
 description: Project for study relationship between transaction of supermarket data.
-featured_image: 2021-12-05-assignment2-assignment2-marketbasket.jpg
 accent_color: '#4C60E6'
-gallery_images:
-  - 2021-12-05-assignment1-assignment1-dashboard.jpg
+
 ---
 {% comment %}
     {% raw %}
@@ -113,9 +111,18 @@ def saveExport():
     !mv $md_name $master_name
     !mv $master_name $post_path
 
-# saveExport()
+saveExport()
 # runBrowser(url)
 ```
+
+    1 posts 
+    2 projects
+     2
+
+
+    [NbConvertApp] Converting notebook assignment8-main.ipynb to markdown
+    [NbConvertApp] Writing 4988 bytes to assignment8-main.md
+
     {% endraw %}
 {% endcomment %}
 ## Objective
