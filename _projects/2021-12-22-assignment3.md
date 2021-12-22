@@ -1,12 +1,10 @@
 ---
 title: Assignment 3 Product Recommendation Engine
 subtitle: Cross Selling Models by Collaborative Filtering Algorithm
-date: 2021-12-04 00:00:00
+date: 2021-12-10 00:00:00
 description: Project for study relationship between transaction of supermarket data.
-featured_image: 2021-12-05-assignment1-assignment1-dashboard.jpg
 accent_color: '#4C60E6'
-gallery_images:
-  - 2021-12-05-assignment1-assignment1-dashboard.jpg
+
 ---
 {% comment %}
     {% raw %}
